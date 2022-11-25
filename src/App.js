@@ -14,12 +14,13 @@ function App() {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
-    
+    // console.log(data.Search[0].Poster)
     setMovies(data.Search);
+    // return data.Search.Poster
   };
-
+  
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("naruto");
   }, []);
 
   return (
@@ -39,9 +40,10 @@ function App() {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
-      <div className="scrole">
-        <img src={movies[0].Poster} alt="" />
-      </div>
+      {/* <div className="scrole">
+
+        <img src={searchMovies('naruto')} alt="" />
+      </div> */}
 
       {movies?.length > 0 ? (
         <div className="container">

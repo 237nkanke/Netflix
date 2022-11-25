@@ -82,7 +82,7 @@ body {
   align-items: center;
 }
 .scrole{
-  display: none;
+  /* display: none; */
 }
 
 .empty h2 {
